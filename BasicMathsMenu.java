@@ -5,31 +5,20 @@ public class BasicMathsMenu {
 	public static void main(String[] args) {
 
 		int menuChoice = 0;
-		String strInput;
-		boolean valid = false;
+
 		
-		Scanner in = new Scanner(System.in);
-		
-		System.out.print("1. Addition (+) \r\n" 
+		System.out.println("Welcome to Basic Maths Practice for Year 1! \r \n"
+				+ "1. Addition (+) \r\n" 
 				+ "2. Subtraction (-) \r\n"
 				+ "3. Multiplication (*) \r\n"
 				+ "4. Division (/) \r\n"
 				+ "5. EXIT \r\n");
+		System.out.println("What is your choice (1-4)?");
 		
-		while(valid==false) {
-			System.out.print("What is your choice (1-4)? \r\n" );
-			strInput = in.nextLine();
-			
-			 try {
-				menuChoice = Integer.parseInt(strInput);
-				valid = true;
-			}
-			catch (NumberFormatException e) {
-				System.out.println("Error - please enter a number between 1 to 5 & refer to the menu.");
-			} 
-			 
-			
-			switch(menuChoice) {
+		Scanner in = new Scanner(System.in);
+		menuChoice = errorCheck();
+		
+	 switch(menuChoice) {
 			case 1:
 				//valid = true;
 				getAddition();
@@ -51,15 +40,12 @@ public class BasicMathsMenu {
 				break;
 
 			case 5:
-				System.out.println("EXIT");
-				break;
+				System.exit(0);
 				
-			default:
-				valid = false;
-			}
+			} 
 		}
+		 
 		
-		}
 		
 	// ADDITION - NAJIBAH'S PART
 		public static void getAddition()  {  
@@ -68,8 +54,22 @@ public class BasicMathsMenu {
 	
 	// SUBTRACTION - AMAAL'S PART
 		public static void getSubtraction()  {  
-			System.out.println("subtraction");
-	}
+			
+			int subChoice = 0;
+			
+			
+			System.out.println("\n---------------------------- ");
+			System.out.println(" \n Subtraction Practice"
+								+ "\r \n You can practice LEVEL 1 or LEVEL 2"
+								+ "\n   Input 1 for LEVEL 1"
+								+ "\n   Input 2 for LEVEL 2");
+			System.out.println("\n---------------------------- \r \n");
+			
+		
+			subChoice = errorCheck();
+			
+						}
+	
 		
 	// MULTIPLICATION - AMAAL'S PART
 				public static void getMultiplication()  {  
@@ -81,5 +81,34 @@ public class BasicMathsMenu {
 					System.out.println("DIVISION");
 			}
 
-}
-		
+
+
+				public static int errorCheck(){
+
+					String strInput;
+					boolean valid = false;
+					int choice = 0;
+
+					Scanner in = new Scanner(System.in);
+
+					do {
+						strInput = in.nextLine();
+						valid = false;
+
+						try {
+							choice = Integer.parseInt(strInput);
+
+							if (choice < 1 || choice > 5) {
+								System.out.println("Error - please only input 1-5 only.");
+								valid = true;
+							}
+
+						}
+						catch (NumberFormatException e) {
+							System.out.println("Error - please only input a whole number.");
+							valid = true;
+						} 
+					} while(valid==true);
+					return choice;
+				}
+			}
