@@ -272,9 +272,9 @@ public class BasicMathsMenu {
 			if (DivChoice == 1) {
 				float RandNo1= 0;
 				float RandNo2= 0;
-				float y = 0;
-				float n = 0;
-				for (float i=1;i<11;i++) { 
+				int y = 0;
+				int n = 0;
+				for (int i=1;i<11;i++) { 
 				RandNo1 = randomNo3digit();
 				RandNo2 = randomNo3digit();
 				System.out.printf("Question %d: What is %.1f / %.1f ? = ", i, RandNo1,RandNo2);
@@ -298,9 +298,9 @@ public class BasicMathsMenu {
 			else if (DivChoice == 2) {
 				float RandNo1= 0;
 				float RandNo2= 0;
-				float y = 0;
-				float n = 0; 
-				for (float i=1;i<11;i++) { 
+				int y = 0;
+				int n = 0; 
+				for (int i=1;i<11;i++) { 
 				RandNo1 = randomNo4digit();
 				RandNo2 = randomNo4digit();
 				System.out.printf("Question %d: What is %.1f / %.1f ? = ", i, RandNo1,RandNo2);
