@@ -254,12 +254,73 @@ public class BasicMathsMenu {
 			}
 	
 			
-	// DIVISION - NADYAH'S PART
-	public static void getDivision()  {  
-			System.out.println("DIVISION");
-			}
+	// DIVISION - (NADYAH) PART
+	public static void getDivision()  { 
+		
+		int DivChoice = 0;
+			
+			
+			System.out.println("\n---------------------------- ");
+			System.out.println(" \n Addition Practice"
+								+ "\r \n You can practice LEVEL 1 or LEVEL 2"
+								+ "\n   Input 1 for LEVEL 1"
+								+ "\n   Input 2 for LEVEL 2");
+			System.out.print("\n---------------------------- \r \n");
 
-
+			DivChoice = errorChecklevel();
+			
+			if (DivChoice == 1) {
+				int RandNo1= 0;
+				int RandNo2= 0;
+				int y = 0;
+				int n = 0;
+				for (int i=1;i<11;i++) { 
+				RandNo1 = randomNo1digit();
+				RandNo2 = randomNo1digit();
+				System.out.printf("Question %d: What is %d / %d ? = ", i, RandNo1,RandNo2);
+				Scanner ans = new Scanner(System.in);
+				int answer = errorCheckAnswer();
+				int Correct = RandNo1 / RandNo2;
+				if (answer == Correct) {
+					y++;
+				}
+				else {
+					n++;
+				}
+				}
+				System.out.println("Total correct answer(s):"+ y);
+				System.out.println("Total incorrect answer(s):"+ n);
+				System.out.println("Questions that are answered correctly:");
+				System.out.println("Questions that are answered incorrectly:");
+				return;
+				}
+			
+			else if (DivChoice == 1) {
+				int RandNo1= 0;
+				int RandNo2= 0;
+				int y = 0;
+				int n = 0; 
+				for (int i=1;i<11;i++) { 
+					RandNo1 = randomNo2digit();
+					RandNo2 = randomNo2digit();
+					System.out.printf("Question %d: What is %d / %d ? = ", i, RandNo1,RandNo2);
+					Scanner ans = new Scanner(System.in);
+					int answer = ans.nextInt();
+					int Correct = RandNo1 / RandNo2;
+					if (answer == Correct) {
+						y++;
+					}
+					else {
+						n++;
+					}
+					}
+					System.out.println("Total correct answer(s):"+ y);
+					System.out.println("Total incorrect answer(s):"+ n);
+					System.out.println("Questions that are answered correctly:");
+					System.out.println("Questions that are answered incorrectly:");
+					return;
+					}
+	}
 	
 	// RANDOM NUMBERS GENERATOR (NAJIBAH)
 	
