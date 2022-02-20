@@ -260,27 +260,27 @@ public class BasicMathsMenu {
 		int DivChoice = 0;
 			
 			
-			System.out.println("\n---------------------------- ");
-			System.out.println(" \n Division Practice"
-								+ "\r \n You can practice LEVEL 1 or LEVEL 2"
-								+ "\n   Input 1 for LEVEL 1"
-								+ "\n   Input 2 for LEVEL 2");
-			System.out.print("\n---------------------------- \r \n");
+		System.out.println("\n---------------------------- ");
+		System.out.println(" \n Division Practice"
+							+ "\r \n You can practice LEVEL 1 or LEVEL 2"
+							+ "\n   Input 1 for LEVEL 1"
+							+ "\n   Input 2 for LEVEL 2");
+		System.out.print("\n---------------------------- \r \n");
 
-			DivChoice = errorChecklevel();
+		DivChoice = errorChecklevel();
 			
 			if (DivChoice == 1) {
-				int RandNo1= 0;
-				int RandNo2= 0;
-				int y = 0;
-				int n = 0;
-				for (int i=1;i<11;i++) { 
-				RandNo1 = randomNo1digit();
-				RandNo2 = randomNo1digit();
-				System.out.printf("Question %d: What is %d / %d ? = ", i, RandNo1,RandNo2);
+				float RandNo1= 0;
+				float RandNo2= 0;
+				float y = 0;
+				float n = 0;
+				for (float i=1;i<11;i++) { 
+				RandNo1 = randomNo3digit();
+				RandNo2 = randomNo3digit();
+				System.out.printf("Question %d: What is %.1f / %.1f ? = ", i, RandNo1,RandNo2);
 				Scanner ans = new Scanner(System.in);
-				int answer = errorCheckAnswer();
-				int Correct = RandNo1 / RandNo2;
+				float answer = errorCheckAnswer();
+				float Correct = RandNo1 / RandNo2;
 				if (answer == Correct) {
 					y++;
 				}
@@ -295,35 +295,35 @@ public class BasicMathsMenu {
 				return;
 				}
 			
-			else if (DivChoice == 1) {
-				int RandNo1= 0;
-				int RandNo2= 0;
-				int y = 0;
-				int n = 0; 
-				for (int i=1;i<11;i++) { 
-					RandNo1 = randomNo2digit();
-					RandNo2 = randomNo2digit();
-					System.out.printf("Question %d: What is %d / %d ? = ", i, RandNo1,RandNo2);
-					Scanner ans = new Scanner(System.in);
-					int answer = ans.nextInt();
-					int Correct = RandNo1 / RandNo2;
-					if (answer == Correct) {
-						y++;
-					}
-					else {
-						n++;
-					}
-					}
-					System.out.println("Total correct answer(s):"+ y);
-					System.out.println("Total incorrect answer(s):"+ n);
-					System.out.println("Questions that are answered correctly:");
-					System.out.println("Questions that are answered incorrectly:");
-					return;
-					}
+			else if (DivChoice == 2) {
+				float RandNo1= 0;
+				float RandNo2= 0;
+				float y = 0;
+				float n = 0; 
+				for (float i=1;i<11;i++) { 
+				RandNo1 = randomNo4digit();
+				RandNo2 = randomNo4digit();
+				System.out.printf("Question %d: What is %.1f / %.1f ? = ", i, RandNo1,RandNo2);
+				Scanner ans = new Scanner(System.in);
+				float answer = ans.nextInt();
+				float Correct = RandNo1 / RandNo2;
+				if (answer == Correct) {
+					y++;
+				}
+				else {
+					n++;
+				}
+				}
+				System.out.println("Total correct answer(s):"+ y);
+				System.out.println("Total incorrect answer(s):"+ n);
+				System.out.println("Questions that are answered correctly:");
+				System.out.println("Questions that are answered incorrectly:");
+				return;
+				}
 	}
 	
-	// RANDOM NUMBERS GENERATOR (NAJIBAH)
 	
+	// RANDOM NUMBERS GENERATOR (NAJIBAH & NADYAH)
 	public static int randomNo1digit() { // Random numbers for Level 1
 			int min = 0;
 			int max = 9;
@@ -337,6 +337,20 @@ public class BasicMathsMenu {
 			int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
 			return random_int;
 		}
+	
+	public static float randomNo3digit() {// Random numbers for level 1 (division)
+		float min = 1;
+		float max = 9;
+		float random_float = (int)Math.floor(Math.random()*(max-min+1)+min);
+		return random_float;
+	       }
+	
+	public static float randomNo4digit() {// Random numbers for level 2 (division)
+		float min = 10;
+		float max = 99;
+		float random_float = (int)Math.floor(Math.random()*(max-min+1)+min);
+		return random_float;
+	        }
 	
 	
 	// VALIDATION FOR MAIN MENU (AMAAL)
