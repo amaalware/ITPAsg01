@@ -261,7 +261,7 @@ public class BasicMathsMenu {
 			
 			
 			System.out.println("\n---------------------------- ");
-			System.out.println(" \n Addition Practice"
+			System.out.println(" \n Division Practice"
 								+ "\r \n You can practice LEVEL 1 or LEVEL 2"
 								+ "\n   Input 1 for LEVEL 1"
 								+ "\n   Input 2 for LEVEL 2");
