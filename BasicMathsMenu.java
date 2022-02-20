@@ -305,7 +305,7 @@ public class BasicMathsMenu {
 				RandNo2 = randomNo4digit();
 				System.out.printf("Question %d: What is %.1f / %.1f ? = ", i, RandNo1,RandNo2);
 				Scanner ans = new Scanner(System.in);
-				float answer = ans.nextInt();
+				float answer = ans.nextfloat();
 				float Correct = RandNo1 / RandNo2;
 				if (answer == Correct) {
 					y++;
