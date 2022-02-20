@@ -254,7 +254,7 @@ public class BasicMathsMenu {
 			}
 	
 			
-	// DIVISION - (NADYAH) PART
+	// DIVISION - NADYAH'S PART
 	public static void getDivision()  { 
 		
 		int DivChoice = 0;
