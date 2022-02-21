@@ -426,4 +426,25 @@ public static int errorCheckAnswer(){
 	} while(valid==true);
 	return choice;
 	}
+	
+// VALIDATION FOR DIVISION ANSWERS (NADYAH)
+public static Float errorCheckAnswer1(){ 
+	String strInput;
+	boolean valid = false;
+	Float choice = (float) 0;
+	Scanner in = new Scanner(System.in);
+	do {
+		strInput = in.nextLine();
+		valid = false;
+
+		try {
+			choice = (float) Integer.parseInt(strInput);
+		}
+		catch (NumberFormatException e) {
+		System.out.println("Error - please only input a whole number.");
+		valid = true;
+		} 
+	} while(valid==true);
+	return choice;
+	}
 }
