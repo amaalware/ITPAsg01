@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.lang.Math;
+import java.util.Random;
 
 public class BasicMathsMenu {
 	public static void main(String[] args) {
@@ -131,55 +133,116 @@ public class BasicMathsMenu {
 			subChoice = errorChecklevel(); 
 			
 			if (subChoice == 1) {
+				
 				int RandNo1= 0;
 				int RandNo2= 0;
-				int y = 0; //initial correct answer = 0
-				int n = 0; // initial wrong answer = 0
-				for (int i=1;i<11;i++) { //loop to generate 10 questions
+				int y = 0; 
+				int n = 0; 
+				int i = 0;
+				int j = 0;
+				int wrongQnNumbers[] = new int[11];
+				int correctQnNumbers[] = new int[11];
+				int wrongQnAns[] = new int[11];
+				
+				for (i=1 ; i < 11; i++) { 
+				
 				RandNo1 = randomNo1digit();
 				RandNo2 = randomNo1digit();
+				
 				System.out.printf("Question %d: What is %d - %d ? = ", i, RandNo1,RandNo2);
 				Scanner ans = new Scanner(System.in);
+				
 				int answer = errorCheckAnswer();
 				int Correct = RandNo1 - RandNo2;
+				
+				
 				if (answer == Correct) {
 					y++;
+					correctQnNumbers[y] = i;
+					
 				}
 				else {
-					n++;
+					n++; 
+					wrongQnNumbers[n] = i;
+					wrongQnAns[n] = Correct;
 				}
+			}
+				
+				System.out.println("\n===========================");
+				System.out.println("\n RESULTS");
+				System.out.println("\n===========================");
+				System.out.println("\n Total correct answer(s):"+ y);
+				System.out.println("\n Total incorrect answer(s):"+ n);
+				
+				System.out.println("\n Below are the questions that are answered correctly:");
+				
+				for (j= 0; j < y; j++) {
+					System.out.print("\n Question " + correctQnNumbers[j+1] + ". " );
 				}
-				System.out.println("Total correct answer(s):"+ y);
-				System.out.println("Total incorrect answer(s):"+ n);
-				System.out.println("Questions that are answered correctly:");
-				System.out.println("Questions that are answered incorrectly:");
-				return;
+				
+
+				System.out.println("\r \n Below are the questions that are answered incorrectly:" );
+				
+				for (j= 0; j < n; j++) {
+					System.out.print("\n Question " + wrongQnNumbers[j+1] + "; The correct answer is " + wrongQnAns[j+1] );
 				}
+			}
 			
 			else if (subChoice == 2) {
 				int RandNo1= 0;
 				int RandNo2= 0;
-				int y = 0; //initial correct answer = 0
-				int n = 0; // initial wrong answer = 0
-				for (int i=1;i<11;i++) { //loop to generate 10 questions
+				int y = 0; 
+				int n = 0; 
+				int i = 0;
+				int j = 0;
+				int wrongQnNumbers[] = new int[11];
+				int correctQnNumbers[] = new int[11];
+				int wrongQnAns[] = new int[11];
+				
+				
+				for (i=1 ; i < 11; i++) { 
+					
 					RandNo1 = randomNo2digit();
 					RandNo2 = randomNo2digit();
+					
 					System.out.printf("Question %d: What is %d - %d ? = ", i, RandNo1,RandNo2);
+					
 					Scanner ans = new Scanner(System.in);
 					int answer = ans.nextInt();
 					int Correct = RandNo1 - RandNo2;
+					
 					if (answer == Correct) {
 						y++;
+						correctQnNumbers[y] = i;
 					}
+					
 					else {
 						n++;
+						wrongQnNumbers[n] = i;
+						wrongQnAns[n] = Correct;
 					}
 					}
-					System.out.println("Total correct answer(s):"+ y);
-					System.out.println("Total incorrect answer(s):"+ n);
-					System.out.println("Questions that are answered correctly:");
-					System.out.println("Questions that are answered incorrectly:");
+				
+				System.out.println("\n===========================");
+				System.out.println("\n RESULTS");
+				System.out.println("\n===========================");
+				System.out.println("\n Total correct answer(s):"+ y);
+				System.out.println("\n Total incorrect answer(s):"+ n);
+				
+				System.out.println("\n Below are the questions that are answered correctly:");
+				
+				for (j= 0; j < y; j++) {
+					System.out.print("\n Question " + correctQnNumbers[j+1] + ". " );
+				}
+				
+
+				System.out.println("\r \n Below are the questions that are answered incorrectly:" );
+				
+				for (j= 0; j < n; j++) {
+					System.out.print("\n Question " + wrongQnNumbers[j+1] + "; The correct answer is " + wrongQnAns[j+1] );
+				}
 					return;
+					
 					}
 			}
 
@@ -192,7 +255,7 @@ public class BasicMathsMenu {
 		
 		
 		System.out.println("\n---------------------------- ");
-		System.out.println(" \n Subtraction Practice"
+		System.out.println(" \n Multiplication Practice"
 							+ "\r \n You can practice LEVEL 1 or LEVEL 2"
 							+ "\n   Input 1 for LEVEL 1"
 							+ "\n   Input 2 for LEVEL 2");
@@ -201,54 +264,116 @@ public class BasicMathsMenu {
 		mulChoice = errorChecklevel(); 
 		
 		if (mulChoice == 1) {
+			
 			int RandNo1= 0;
 			int RandNo2= 0;
-			int y = 0; //initial correct answer = 0
-			int n = 0; // initial wrong answer = 0
-			for (int i=1;i<11;i++) { //loop to generate 10 questions
+			int y = 0; 
+			int n = 0; 
+			int i = 0;
+			int j = 0;
+			int wrongQnNumbers[] = new int[11];
+			int correctQnNumbers[] = new int[11];
+			int wrongQnAns[] = new int[11];
+			
+			
+			for (i=1 ; i < 11; i++) { 
+				
 			RandNo1 = randomNo1digit();
 			RandNo2 = randomNo1digit();
+			
 			System.out.printf("Question %d: What is %d * %d ? = ", i, RandNo1,RandNo2);
+			
 			Scanner ans = new Scanner(System.in);
 			int answer = errorCheckAnswer();
 			int Correct = RandNo1 * RandNo2;
+			
 			if (answer == Correct) {
 				y++;
+				correctQnNumbers[y] = i;
 			}
 			else {
 				n++;
+				wrongQnNumbers[n] = i;
+				wrongQnAns[n] = Correct;
 			}
 			}
-			System.out.println("Total correct answer(s):"+ y);
-			System.out.println("Total incorrect answer(s):"+ n);
-			System.out.println("Questions that are answered correctly:");
-			System.out.println("Questions that are answered incorrectly:");
+			
+			System.out.println("\n===========================");
+			System.out.println("\n RESULTS");
+			System.out.println("\n===========================");
+			System.out.println("\n Total correct answer(s):"+ y);
+			System.out.println("\n Total incorrect answer(s):"+ n);
+			
+			System.out.println("\n Below are the questions that are answered correctly:");
+			
+			for (j= 0; j < y; j++) {
+				System.out.print("\n Question " + correctQnNumbers[j+1] + ". " );
+			}
+			
+
+			System.out.println("\r \n Below are the questions that are answered incorrectly:" );
+			
+			for (j= 0; j < n; j++) {
+				System.out.print("\n Question " + wrongQnNumbers[j+1] + "; The correct answer is " + wrongQnAns[j+1] );
+			}
+			
 			return;
+			
 			}
 		
 		else if (mulChoice == 2) {
 			int RandNo1= 0;
 			int RandNo2= 0;
-			int y = 0; //initial correct answer = 0
-			int n = 0; // initial wrong answer = 0
-			for (int i=1;i<11;i++) { //loop to generate 10 questions
+			int y = 0; 
+			int n = 0; 
+			int i = 0;
+			int j = 0;
+			int wrongQnNumbers[] = new int[11];
+			int correctQnNumbers[] = new int[11];
+			int wrongQnAns[] = new int[11];
+			
+			for (i=1 ; i < 11; i++) { 
+				
 				RandNo1 = randomNo2digit();
 				RandNo2 = randomNo2digit();
+				
 				System.out.printf("Question %d: What is %d * %d ? = ", i, RandNo1,RandNo2);
 				Scanner ans = new Scanner(System.in);
+				
 				int answer = ans.nextInt();
 				int Correct = RandNo1 * RandNo2;
+				
 				if (answer == Correct) {
 					y++;
+					correctQnNumbers[y] = i;
 				}
 				else {
 					n++;
+					wrongQnNumbers[n] = i;
+					wrongQnAns[n] = Correct;
 				}
 				}
-				System.out.println("Total correct answer(s):"+ y);
-				System.out.println("Total incorrect answer(s):"+ n);
-				System.out.println("Questions that are answered correctly:");
-				System.out.println("Questions that are answered incorrectly:");
+		
+			
+			System.out.println("\n===========================");
+			System.out.println("\n RESULTS");
+			System.out.println("\n===========================");
+			System.out.println("\n Total correct answer(s):"+ y);
+			System.out.println("\n Total incorrect answer(s):"+ n);
+			
+			System.out.println("\n Below are the questions that are answered correctly:");
+			
+			for (j= 0; j < y; j++) {
+				System.out.print("\n Question " + correctQnNumbers[j+1] + ". " );
+			}
+			
+
+			System.out.println("\r \n Below are the questions that are answered incorrectly:" );
+			
+			for (j= 0; j < n; j++) {
+				System.out.print("\n Question " + wrongQnNumbers[j+1] + "; The correct answer is " + wrongQnAns[j+1] );
+			}
+				
 				return;
 				}
 			}
@@ -305,7 +430,7 @@ public class BasicMathsMenu {
 				RandNo2 = randomNo4digit();
 				System.out.printf("Question %d: What is %.1f / %.1f ? = ", i, RandNo1,RandNo2);
 				Scanner ans = new Scanner(System.in);
-				float answer = ans.nextfloat();
+				float answer = ans.nextFloat();
 				float Correct = RandNo1 / RandNo2;
 				if (answer == Correct) {
 					y++;
@@ -323,8 +448,10 @@ public class BasicMathsMenu {
 	}
 	
 	
+	
 	// RANDOM NUMBERS GENERATOR (NAJIBAH & NADYAH)
 	public static int randomNo1digit() { // Random numbers for Level 1
+		 
 			int min = 0;
 			int max = 9;
 			int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
@@ -408,10 +535,13 @@ public class BasicMathsMenu {
 
 // VALIDATION FOR ANSWERS (AMAAL)
 public static int errorCheckAnswer(){ 
+	
 	String strInput;
 	boolean valid = false;
 	int choice = 0;
+	
 	Scanner in = new Scanner(System.in);
+	
 	do {
 		strInput = in.nextLine();
 		valid = false;
@@ -423,8 +553,11 @@ public static int errorCheckAnswer(){
 		System.out.println("Error - please only input a whole number.");
 		valid = true;
 		} 
+		
 	} while(valid==true);
+	
 	return choice;
+	
 	}
 	
 // VALIDATION FOR DIVISION ANSWERS (NADYAH)
