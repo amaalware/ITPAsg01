@@ -450,6 +450,7 @@ public class BasicMathsMenu {
 		System.out.println("\n---------------------------- \r \n");
 		
 		DivChoice = errorChecklevel();
+		
 		if (DivChoice == 1) {
 			
 			double RandNo3= 0;
@@ -470,9 +471,9 @@ public class BasicMathsMenu {
 			RandNo4 = randomNo3digit();
 					
 			System.out.printf("Question %d: What is %.1f / %.1f ? = ", i, RandNo3,RandNo4);
+			
 			Scanner ans = new Scanner(System.in);
-					
-			double answer = ans.nextDouble();
+			double answer = errorCheckAnswer1();
 			double Correct = RandNo3 / RandNo4; 
 			double roundOff = Math.round(Correct*10)/10.0; //convert into 1 dp
 
@@ -531,8 +532,7 @@ public class BasicMathsMenu {
 					
 				System.out.printf("Question %d: What is %.1f / %.1f ? = ", i, RandNo3,RandNo4);
 				Scanner ans = new Scanner(System.in);
-					
-				double answer = ans.nextDouble();
+				double answer = errorCheckAnswer1();
 				double Correct = RandNo3 / RandNo4; 
 				double roundOff = Math.round(Correct*10)/10.0; //convert into 1 dp
 				
@@ -683,20 +683,20 @@ public static int errorCheckAnswer(){
 	}
 	
 // VALIDATION FOR DIVISION ANSWERS (NADYAH)
-public static Float errorCheckAnswer1(){ 
+public static double errorCheckAnswer1(){ 
 	String strInput;
 	boolean valid = false;
-	Float choice = (float) 0;
+	double choice = 0;
 	Scanner in = new Scanner(System.in);
 	do {
 		strInput = in.nextLine();
 		valid = false;
 
 		try {
-			choice = (float) Integer.parseInt(strInput);
+			choice = Double.parseDouble(strInput);
 		}
 		catch (NumberFormatException e) {
-		System.out.println("Error - please only input a whole number.");
+		System.out.println("Error - please only input number.");
 		valid = true;
 		} 
 	} while(valid==true);
