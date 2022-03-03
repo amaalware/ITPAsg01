@@ -439,9 +439,7 @@ public class BasicMathsMenu {
 	// DIVISION - NADYAH'S PART
 	public static void getDivision()  { 
 		
-		
 		int DivChoice = 0;
-		
 		
 		System.out.println("\n---------------------------- ");
 		System.out.println(" \n Division Practice"
@@ -451,7 +449,6 @@ public class BasicMathsMenu {
 		System.out.println("\n---------------------------- \r \n");
 		
 		DivChoice = errorChecklevel();
-		
 		
 		if (DivChoice == 1) {
 			
@@ -472,7 +469,7 @@ public class BasicMathsMenu {
 			RandNo3 = randomNo3digit();
 			RandNo4 = randomNo3digit();
 					
-			System.out.printf("Question %d: What is %.1f / %.1f ? = ", i, RandNo3,RandNo4);
+			System.out.printf("Question %d: What is %.1d / %.1d ? = ", i, RandNo3,RandNo4);
 			
 			Scanner ans = new Scanner(System.in);
 			double answer = errorCheckAnswer1();
@@ -533,7 +530,7 @@ public class BasicMathsMenu {
 				RandNo3 = randomNo4digit();
 				RandNo4 = randomNo4digit();
 					
-				System.out.printf("Question %d: What is %.1f / %.1f ? = ", i, RandNo3,RandNo4);
+				System.out.printf("Question %d: What is %.1d / %.1d ? = ", i, RandNo3,RandNo4);
 				Scanner ans = new Scanner(System.in);
 				double answer = errorCheckAnswer1();
 				double Correct = RandNo3 / RandNo4; 
