@@ -439,6 +439,7 @@ public class BasicMathsMenu {
 	// DIVISION - NADYAH'S PART
 	public static void getDivision()  { 
 		
+		
 		int DivChoice = 0;
 		
 		
@@ -450,6 +451,7 @@ public class BasicMathsMenu {
 		System.out.println("\n---------------------------- \r \n");
 		
 		DivChoice = errorChecklevel();
+		
 		
 		if (DivChoice == 1) {
 			
@@ -511,6 +513,7 @@ public class BasicMathsMenu {
 			return;
 			}
 			
+		
 		else if (DivChoice == 2) {
 			double RandNo3= 0;
 			double RandNo4= 0;
